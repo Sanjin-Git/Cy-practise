@@ -9,20 +9,9 @@ describe("Login test cases", () => {
         cy.get("a[href='/login']").click();
     })
 
-    it ("Login with valid credentials", () => {
-        cy.get("#email").type("test3@test3.com");
-        cy.get("#password").type("test2022"); //moze ("{backspace}")
-        cy.get("button[type='submit']").click();
-    })
-
-    it ("Logout", () => {
-        cy.wait(4000);
-        cy.get('[class="nav-link nav-buttons"]').eq(2).click();
-    })
-
     it ("Login with invalid credentials", () => {
-        cy.get("#email").clear().type("@test3.com");
-        cy.get("#password").type("test2022"); //moze ("{backspace}")
+        cy.get("#email").clear().type("@test3.com"); //clear sam stavljala u svakom testu da bih se osigurala u slucaju promene redosleda test case-ova
+        cy.get("#password").clear().type("test2022");
         cy.get("button[type='submit']").click();
         cy.wait(3000);
     })
@@ -42,8 +31,8 @@ describe("Login test cases", () => {
     })
 
     it ("Login with non registered credentials", () => {
-        cy.get("#email").type("test99@test3.com");
-        cy.get("#password").type("test2022");
+        cy.get("#email").clear().type("test99@test3.com");
+        cy.get("#password").clear().type("test2022");
         cy.get("button[type='submit']").click();
     })
 
@@ -53,5 +42,18 @@ describe("Login test cases", () => {
         cy.get("button[type='submit']").click();
       
     })
+
+    it ("Login with valid credentials", () => {
+        cy.get("#email").clear().type("test3@test3.com");
+        cy.get("#password").clear().type("test2022");
+        cy.get("button[type='submit']").click();
+    })
+
+    it ("Logout", () => {
+        cy.wait(4000);
+        cy.get('[class="nav-link nav-buttons"]').eq(2).click();
+    })
+
+    
 
 })

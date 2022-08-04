@@ -20,7 +20,6 @@ describe("Negative test cases - register", ( )=> {
     })
 
     it("Create registration without input Last Name", () => {
-        cy.wait(4000);
         cy.get('#first-name').type("Test445");
         cy.get('#last-name').clear();
         cy.get('#email').clear().type("test0512@test512.com");
@@ -31,7 +30,6 @@ describe("Negative test cases - register", ( )=> {
     })
 
     it("Create registration without input Email", () => {
-        cy.wait(4000);
         cy.get('#first-name').clear().type("Test445");
         cy.get('#last-name').clear().type("Test445");
         cy.get('#email').clear();
@@ -42,7 +40,6 @@ describe("Negative test cases - register", ( )=> {
     })
 
     it("Create registration with invalid Email", () => {
-        cy.wait(4000);
         cy.get('#first-name').clear().type("Test445");
         cy.get('#last-name').clear().type("Test445");
         cy.get('#email').clear().type("@test4.com");
@@ -53,7 +50,6 @@ describe("Negative test cases - register", ( )=> {
     })
 
     it("Create registration with used Email adress", () => {
-        cy.wait(4000);
         cy.get('#first-name').clear().type("Test445");
         cy.get('#last-name').clear().type("Test445");
         cy.get('#email').clear().type("test4@test4.com");
@@ -64,7 +60,6 @@ describe("Negative test cases - register", ( )=> {
     })
 
     it("Create registration without input Password field", () => {
-        cy.wait(4000);
         cy.get('#first-name').clear().type("Test445");
         cy.get('#last-name').clear().type("Test445");
         cy.get('#email').clear().type("test0512@test512.com");
@@ -75,7 +70,6 @@ describe("Negative test cases - register", ( )=> {
     })
 
     it("Create registration with Password shorter then 8 char", () => {
-        cy.wait(4000);
         cy.get('#first-name').clear().type("Test445");
         cy.get('#last-name').clear().type("Test445");
         cy.get('#email').clear().type("test0512@test512.com");
@@ -86,7 +80,6 @@ describe("Negative test cases - register", ( )=> {
     })
 
     it("Create registration with invalid Password format", () => {
-        cy.wait(4000);
         cy.get('#first-name').clear().type("Test445");
         cy.get('#last-name').clear().type("Test445");
         cy.get('#email').clear().type("test0512@test512.com");
@@ -98,7 +91,6 @@ describe("Negative test cases - register", ( )=> {
 
 
     it("Create registration when password confirmation don't match", () => {
-        cy.wait(4000);
         cy.get('#first-name').clear().type("Test445");
         cy.get('#last-name').clear().type("Test445");
         cy.get('#email').clear().type("test0512@test512.com");
@@ -109,7 +101,6 @@ describe("Negative test cases - register", ( )=> {
     })
 
     it("Create registration without Password confirmation", () => {
-        cy.wait(4000);
         cy.get('#first-name').clear().type("Test445");
         cy.get('#last-name').clear().type("Test445");
         cy.get('#email').clear().type("test0512@test512.com");
@@ -120,7 +111,6 @@ describe("Negative test cases - register", ( )=> {
     })
 
     it("Create registration without accepting terms and conditions", () => {
-        cy.wait(4000);
         cy.get('#first-name').clear().type("Test445");
         cy.get('#last-name').clear().type("Test445");
         cy.get('#email').clear().type("test0512@test512.com");
@@ -131,7 +121,6 @@ describe("Negative test cases - register", ( )=> {
     })
 
     it("Create registration without clicking on Submit button", () => {
-        cy.wait(4000);
         cy.get('#first-name').clear().type("Test445");
         cy.get('#last-name').clear().type("Test445");
         cy.get('#email').clear().type("test0512@test512.com");
