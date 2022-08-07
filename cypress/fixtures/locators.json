@@ -1,0 +1,32 @@
+{
+"login": {
+    "emailInput": "#email",
+    "passwordInput": "#password",
+    "submitButton": "button[type='submit']"
+},
+
+"header": {
+    "loginButton": "a[href='/login']",
+    "logoutButton": "[class='nav-link nav-buttons']",
+    "registerButton": "a[href='/register']"
+},
+
+"register": {
+    "firstName": "#first-name",
+    "lastName": "#last-name",
+    "email": "#email",
+    "password": "#password",
+    "passwordConfirmationButton": "#password-confirmation",
+    "termsAndConditions": ".form-check-input",
+    "submitRegistrationButton": ".btn"
+},
+
+"createGallery": {
+    "createGalleryBtn": "[href='/create']",
+    "title": "[id='title']",
+    "inputURLField": "form > :nth-child(3) > :nth-child(3)"
+}
+
+
+}
+
