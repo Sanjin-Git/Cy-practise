@@ -15,10 +15,27 @@ class Navigation {
         return cy.get("[href='/create']")
     }
 
-    get titleInputField() {
-        return cy.get("[id='title']")
+    get lastGalleryTitle() {
+        return cy.get('h2 > a').first()
     }
 
+    get descriptionField() {
+        return cy.get('p')
+    }
+
+    get deleteGalleryBtn() {
+        return cy.get('[class="btn btn-custom"]').first()
+    }
+
+    get allGalleriesBtn() {
+        return cy.get('[href="/"]').last()
+    }
+
+    get myGalleriesBtn() {
+        return cy.get('[href="/my-galleries"]')
+    }
+
+    
 
     clickOnLoginButton() {
         this.loginButton.click();
@@ -36,9 +53,15 @@ class Navigation {
         this.createGalleyBtn.click();
     }
 
-    clickOnTitleInputField() {
-        this.titleInputField.click();
+    clickOnLastGalleryTitle() {
+        this.lastGalleryTitle.click();
     }
+
+    clickOnDeleteGalleryBtn() {
+        this.deleteGalleryBtn.click();
+    }
+
+
 
 }
 
