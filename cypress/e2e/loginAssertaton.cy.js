@@ -62,13 +62,13 @@ describe("Login test cases", () => {
         navigation.loginButton.should('exist');
     });
 
-    it.only("Login with blank email", () => {
+    it("Login with blank email", () => {
         loginPage.login("{backspace}", "test1235");
         cy.url().should('contain', '/login');
         navigation.loginButton.should('exist');
     });
 
-    it.only("Login with blank password", () => {
+    it("Login with blank password", () => {
         loginPage.login(faker.internet.email(), "{backspace}");
         cy.url().should('contain', '/login');
         navigation.loginButton.should('exist');

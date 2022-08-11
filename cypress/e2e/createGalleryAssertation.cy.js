@@ -37,7 +37,7 @@ describe("Create gallery test cases", () => {
             navigation.descriptionField.should("exist")
             .and('contain', galerija.description);
             navigation.deleteGalleryBtn.should('exist');
-            navigation.clickOnDeleteGalleryBtn(); // pokusala sam ovde na razne nacine da ubacim .click('{enter}') kako bih potvrdila brisanje, ali nisam uspela. Kako?
+            navigation.clickOnDeleteGalleryBtn(); // pokusala sam ovde na razne nacine da ubacim .click('{enter}') kako bih potvrdila brisanje, ali nisam uspela
             cy.url().should('contains', 'https://gallery-app.vivifyideas.com');
             navigation.lastGalleryTitle.should('not.contain', galerija.imeGalerije);
         })
