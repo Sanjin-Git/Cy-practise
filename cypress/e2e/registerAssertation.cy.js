@@ -126,8 +126,11 @@ describe("Negative test cases - register", ( )=> {
         })
 
     it("Create registration - vaild input", () => {
+        cy.intercept('POST', 'https://gallery-api.vivifyideas.com/api/auth/register').as('registerPage')
         registrationPage.register(user.firstName, user.lastName, faker.internet.email(), 'test2022', 'test2022');
-        cy.wait(1000);
+        cy.wait('@registerPage').then((intercept) => {
+            expect(intercept.response.statusCode).to.eq(200)
+        })
         cy.url().should('contain', 'https://gallery-app.vivifyideas.com/');
         general.headerTitle.should('have.text', 'All Galleries');
         navigation.allGalleriesBtn.should('exist');
@@ -137,8 +140,11 @@ describe("Negative test cases - register", ( )=> {
     })
    
     it("Create registration with one-char first name and last name", () => {
+        cy.intercept('POST', 'https://gallery-api.vivifyideas.com/api/auth/register').as('registerPage')
         registrationPage.register('A', 'B', faker.internet.email(), 'test2022', 'test2022');
-        cy.wait(1000);
+        cy.wait('@registerPage').then((intercept) => {
+            expect(intercept.response.statusCode).to.eq(200)
+        })
         cy.url().should('contain', 'https://gallery-app.vivifyideas.com/');
         general.headerTitle.should('have.text', 'All Galleries');
         navigation.allGalleriesBtn.should('exist');
